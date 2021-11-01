@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pomodoro App</title>
+  </head>
+  <body>
+    <h1>Pomodro clock with bell</h1>
+
+    <figure class="clock">
+      <div class="mins">0</div>
+      <div>:</div>
+      <div class="secs">00</div>
+      <audio
+        src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
+      ></audio>
+      <svg class="progress_ring" height="120" width="120">
+        <circle
+          class="progress_ring_circle"
+          stroke-width="10"
+          fill="transparent"
+          r="50"
+          cx="60"
+          cy="60"
+        />
+      </svg>
+    </figure>
+
+    <div class="btn_group">
+      <button class="start">start focus</button>
+      <button class="reset">reset</button>
+      <button class="pause">pause</button>
+    </div>
+
+    <form action=".">
+      <label for="focusTime">Focus Time</label>
+      <input type="number" value="1" id="focusTime" />
+      <label for="breakTime">Break Time</label>
+      <input type="number" value="1" id="breakTime" />
+      <button type="submit">Save settings</button>
+      <label for="color">Change Circle Color</label>
+      <input type="color" id="color" />
+      <label for="fonts">Change Font Size</label>
+      <select name="fonts" id="font" onchange="changeFont()">
+        <option value="14px" selected>small</option>
+        <option value="24px">medium</option>
+        <option value="34px">large</option>
+      </select>
+    </form>
+
+    <script src="settings.js"></script>
+    <script src="timer.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
